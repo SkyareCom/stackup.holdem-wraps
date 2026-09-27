@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { HomeScreen } from "./features/home/HomeScreen";
 import { TrainingSheet } from "./features/training/TrainingSheet";
 import { TRAINING_MODULES } from "./data/trainingModules";
@@ -20,6 +20,7 @@ export default function App() {
   const [activeNav, setActiveNav] = useState("home");
   const [selectedModule, setSelectedModule] = useState(null);
   const [notice, setNotice] = useState("");
+  const noticeTimer = useRef(null);
 
   useEffect(() => {
     analytics.appOpen({
@@ -30,8 +31,8 @@ export default function App() {
 
   const showNotice = (text) => {
     setNotice(text);
-    window.clearTimeout(showNotice.timer);
-    showNotice.timer = window.setTimeout(() => setNotice(""), 1800);
+    window.clearTimeout(noticeTimer.current);
+    noticeTimer.current = window.setTimeout(() => setNotice(""), 1800);
   };
 
   const handleModuleOpen = (trainingModule) => {
