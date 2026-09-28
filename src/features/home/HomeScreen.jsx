@@ -34,30 +34,28 @@ function Header({ session }) {
         <PlayerBadge session={session} />
       </div>
 
-      <div className="mt-5 flex flex-col items-center text-center">
-        <div className="mb-3 h-20 w-20 overflow-hidden rounded-full shadow-[0_0_34px_rgba(245,158,11,0.12)]">
+      <div className="mt-4 flex flex-col items-center text-center">
+        <div className="mb-3 h-28 w-28 overflow-hidden rounded-full shadow-[0_0_38px_rgba(255,65,72,0.16)]">
           <img
-            src={`${import.meta.env.BASE_URL}stackup-logo.webp`}
+            src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp`}
             alt="StackUp Hold'em"
             className="h-full w-full object-cover"
           />
         </div>
-        <p className="text-[9px] uppercase tracking-[0.35em] text-red-300/55">
-          Poker Training System
-        </p>
-        <h1 className="gold-text mt-1 text-[42px] leading-none tracking-[0.12em] min-[390px]:text-[46px]">
-          OMAHA
+
+        <h1 className="brand-protest text-[#ff4148]">
+          STACKUP HOLD&apos;EM
         </h1>
-        <h2 className="mt-1 text-[13px] tracking-[0.34em] text-white/90 min-[390px]:text-[14px]">
-          POKER PRO
-        </h2>
-        <div className="mt-4 h-px w-24 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
-        <p className="mt-3 text-[10px] tracking-[0.24em] text-amber-200/70">
-          TRAINING &amp; STRATEGY
-        </p>
-        <p className="mt-1 text-[9px] uppercase tracking-[0.14em] text-white/35">
-          Treinamento de modalidades
-        </p>
+
+        <div className="wraps-word" aria-label="WRAPS">
+          <span className="wraps-letter">W</span>
+          <span className="wraps-letter">R</span>
+          <span className="wraps-letter">A</span>
+          <span className="wraps-letter">P</span>
+          <span className="wraps-letter">S</span>
+        </div>
+
+        <p className="text-white/70">PLO COM CONFIANÇA.</p>
       </div>
     </header>
   );
