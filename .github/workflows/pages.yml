@@ -32,6 +32,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create fresh preview route
+        run: |
+          mkdir -p dist/live
+          cp dist/index.html dist/live/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
