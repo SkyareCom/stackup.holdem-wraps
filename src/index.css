@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Margarine&family=Protest+Riot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Margarine&family=Protest+Riot&family=Roboto+Condensed:wght@400;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -146,23 +146,186 @@ a {
 
 .login-mockup-shell {
   background:
-    radial-gradient(circle at 50% 9%, rgba(176, 12, 24, 0.34), transparent 34%),
-    linear-gradient(180deg, #190205 0%, #0e0203 42%, #050101 100%);
+    radial-gradient(circle at 50% 8%, rgba(192, 10, 25, 0.34), transparent 33%),
+    radial-gradient(circle at 12% 26%, rgba(117, 0, 12, 0.18), transparent 28%),
+    linear-gradient(180deg, #160204 0%, #0b0102 44%, #030101 100%);
 }
 
 .login-red-glow {
   background:
-    radial-gradient(circle at 15% 10%, rgba(255, 28, 42, 0.22), transparent 30%),
-    radial-gradient(circle at 86% 24%, rgba(155, 0, 18, 0.18), transparent 34%);
-  filter: blur(3px);
+    radial-gradient(circle at 17% 8%, rgba(255, 30, 44, 0.21), transparent 29%),
+    radial-gradient(circle at 84% 22%, rgba(142, 0, 18, 0.16), transparent 33%);
+  filter: blur(5px);
+}
+
+.login-bg-aces {
+  pointer-events: none;
+  position: fixed;
+  left: 50%;
+  top: 29%;
+  z-index: 0;
+  width: min(80vw, 344px);
+  transform: translate(-50%, -50%) rotate(-30deg);
+  object-fit: contain;
+  opacity: .30;
+  filter: brightness(.72) contrast(1.06);
+  user-select: none;
+}
+
+.login-brand-logo {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 9999px;
+  box-shadow:
+    0 0 0 1px rgba(255, 65, 72, .10),
+    0 0 30px rgba(255, 55, 65, .22);
 }
 
 .login-mockup-shell .bebrush-word {
-  margin: 8px 0 10px;
-  font-size: 40px !important;
-  letter-spacing: 0.015em;
+  margin: 4px 0 5px;
+  font-family: "Margarine", cursive !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 38px !important;
+  line-height: .98 !important;
+  letter-spacing: .012em;
   color: #ff3039;
+  transform: rotate(-7deg);
+  transform-origin: center;
+  -webkit-text-stroke: .15px rgba(255, 70, 80, .92) !important;
   text-shadow:
-    0 0 10px rgba(255, 48, 57, 0.16),
-    0 3px 14px rgba(0, 0, 0, 0.45);
+    0 0 10px rgba(255, 48, 57, .14),
+    0 3px 12px rgba(0, 0, 0, .46);
+}
+
+.login-brand-slogan {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  line-height: 1.1 !important;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.78);
+  -webkit-text-stroke: 0 !important;
+}
+
+.login-card-stack {
+  margin-top: 24px;
+  display: grid;
+  gap: 11px;
+}
+
+.login-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 61, 72, .56);
+  background:
+    linear-gradient(135deg, rgba(45, 7, 11, .96), rgba(12, 2, 3, .98) 68%, rgba(3, 1, 1, .99));
+  text-align: left;
+  box-shadow:
+    0 13px 28px rgba(0,0,0,.44),
+    inset 0 1px 0 rgba(255,255,255,.025),
+    inset 0 0 24px rgba(255,45,55,.028),
+    0 0 14px rgba(255,35,45,.10);
+  backdrop-filter: blur(7px);
+}
+
+.login-card-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 84px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.login-card-icon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.26);
+  color: rgba(255,255,255,.92);
+  -webkit-text-stroke: 0 !important;
+}
+
+.login-card-icon.is-accent {
+  border-color: rgba(255, 65, 72, .28);
+  color: #ff3039;
+  box-shadow: 0 0 16px rgba(255,45,55,.10);
+}
+
+.login-card-title {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 1.02 !important;
+  letter-spacing: .01em;
+  color: #fff;
+  -webkit-text-stroke: 0 !important;
+}
+
+.login-card-subtitle {
+  margin: 5px 0 0;
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 1.15 !important;
+  letter-spacing: .005em;
+  color: rgba(255,255,255,.55);
+  -webkit-text-stroke: 0 !important;
+}
+
+.login-card-chevron {
+  flex: 0 0 auto;
+  color: rgba(255,255,255,.75);
+  transition: transform 200ms ease;
+  -webkit-text-stroke: 0 !important;
+}
+
+.login-card-drawer {
+  border-top: 1px solid rgba(255, 61, 72, .14);
+  padding: 12px 14px 14px;
+  text-align: left;
+}
+
+.login-card-drawer,
+.login-card-drawer * {
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-style: normal !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+@media (max-height: 760px) {
+  .login-brand-logo {
+    width: 118px;
+    height: 118px;
+  }
+
+  .login-mockup-shell .bebrush-word {
+    font-size: 34px !important;
+  }
+
+  .login-card-stack {
+    margin-top: 18px;
+    gap: 9px;
+  }
+
+  .login-card-trigger {
+    min-height: 76px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
