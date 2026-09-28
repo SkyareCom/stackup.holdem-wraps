@@ -77,23 +77,21 @@ export function LoginPage({ onEnter }) {
     <main className="min-h-screen bg-[#050102] text-white">
       <div className="relative mx-auto min-h-screen w-full max-w-[430px] overflow-hidden bg-gradient-to-b from-[#4a0e17] via-[#21050a] to-[#050102] px-4 pb-8 pt-8 shadow-[0_0_80px_rgba(0,0,0,0.7)]">
         <div className="soft-noise pointer-events-none absolute inset-0" />
+        <img
+          src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-4`}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none fixed left-1/2 top-1/2 z-0 w-[80vw] max-w-[344px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg] object-contain opacity-30 select-none"
+        />
 
         <div className="relative z-10">
           <header className="pt-1 text-center">
-            <div className="relative mx-auto flex h-[320px] w-full items-center justify-center">
+            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
               <img
-                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-3`}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute w-[80vw] max-w-[344px] -rotate-[30deg] object-contain opacity-90"
+                src={BRAND_LOGO}
+                alt="StackUp Hold'em"
+                className="h-full w-full object-cover"
               />
-              <div className="relative z-10 h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
-                <img
-                  src={BRAND_LOGO}
-                  alt="StackUp Hold'em"
-                  className="h-full w-full object-cover"
-                />
-              </div>
             </div>
 
             <div className="wraps-word" aria-label="WRAPS">
