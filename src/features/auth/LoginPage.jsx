@@ -85,7 +85,7 @@ function ChoiceButton({ active, children, onClick }) {
 }
 
 const ACTION_CLASS =
-  "w-full rounded-2xl border border-red-500/45 bg-gradient-to-r from-[#6d0b12] via-[#d71924] to-[#79080f] px-4 py-3 text-white shadow-[0_10px_28px_rgba(160,0,12,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] transition active:scale-[0.99] disabled:opacity-35";
+  "red-glass-btn w-full px-4 py-3 transition active:scale-[0.99] disabled:opacity-35";
 
 const FIELD_CLASS =
   "w-full rounded-2xl border border-red-500/20 bg-black/35 px-4 py-3 text-white outline-none transition placeholder:text-white/25 focus:border-red-400/45 focus:shadow-[0_0_0_3px_rgba(255,45,55,0.06)]";
