@@ -37,7 +37,7 @@ function Header({ session }) {
       <div className="mt-4 flex flex-col items-center text-center">
         <div className="relative mb-3 flex h-40 w-40 items-center justify-center">
           <img
-            src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-1`}
+            src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-2`}
             alt=""
             aria-hidden="true"
             className="pointer-events-none absolute h-40 w-40 -rotate-[30deg] object-contain opacity-90"
