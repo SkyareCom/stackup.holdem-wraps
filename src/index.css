@@ -1,15 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Coming Soon", cursive;
+  font-style: italic;
+  font-weight: 700;
   color: #ffffff;
   background: #050102;
-  font-synthesis: none;
+  font-synthesis: weight style;
   text-rendering: optimizeLegibility;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "Coming Soon", cursive !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
 }
 
 html {
@@ -26,8 +32,14 @@ body {
   overscroll-behavior-y: none;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font: inherit;
+  font-family: "Coming Soon", cursive !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
 }
 
 button,
