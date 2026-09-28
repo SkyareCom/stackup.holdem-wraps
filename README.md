@@ -1,4 +1,4 @@
-# StackUp Hold'em — Omaha Poker Pro
+# StackUp Hold'em — Wraps
 
 Tela inicial mobile-first para treinamento das principais modalidades de Omaha.
 
@@ -7,7 +7,7 @@ Tela inicial mobile-first para treinamento das principais modalidades de Omaha.
 - Omaha Hi
 - Omaha Hi-Lo (8 or better)
 - Omaha de 5 Cartas
-- Omaha de 6 Cartas
+- Omaha de 6 Cartas 
 - Courchevel
 
 ## Stack
