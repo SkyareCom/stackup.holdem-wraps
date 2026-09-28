@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { BottomNavigation } from "./components/BottomNavigation";
+import { LoginPage } from "./features/auth/LoginPage";
 import { HomePage } from "./features/home/HomePage";
 import { TrainingPage } from "./features/training/TrainingPage";
 import { StatsPage } from "./features/stats/StatsPage";
@@ -26,6 +27,7 @@ function Notice({ text }) {
 
 export default function App() {
   const session = useMemo(() => readSession(), []);
+  const [hasEntered, setHasEntered] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
   const [selectedModule, setSelectedModule] = useState(null);
   const [notice, setNotice] = useState("");
@@ -168,6 +170,10 @@ export default function App() {
   };
 
   const trackTransform = `translate3d(calc(-${activeIndex * 100}% + ${dragX}px), 0, 0)`;
+
+  if (!hasEntered) {
+    return <LoginPage onEnter={() => setHasEntered(true)} />;
+  }
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#050102] text-white">
