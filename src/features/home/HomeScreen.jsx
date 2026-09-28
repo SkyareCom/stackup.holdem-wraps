@@ -44,6 +44,7 @@ function Header({ session }) {
           />
         </div>
 
+        <div className="bebrush-word" aria-label="WRAPS">WRAPS</div>
         <p className="text-white/70">PLO COM CONFIANÇA.</p>
       </div>
     </header>
