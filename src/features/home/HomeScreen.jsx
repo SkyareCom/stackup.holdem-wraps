@@ -2,7 +2,6 @@ import React from "react";
 import {
   ChevronRight,
   Play,
-  Spade,
   Trophy,
 } from "lucide-react";
 
@@ -36,8 +35,12 @@ function Header({ session }) {
       </div>
 
       <div className="mt-5 flex flex-col items-center text-center">
-        <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-300/25 bg-gradient-to-b from-amber-300/15 to-amber-800/5 shadow-[0_0_35px_rgba(245,158,11,0.12)]">
-          <Spade size={23} strokeWidth={1.7} className="fill-amber-400 text-amber-400" />
+        <div className="mb-3 h-20 w-20 overflow-hidden rounded-full shadow-[0_0_34px_rgba(245,158,11,0.12)]">
+          <img
+            src={`${import.meta.env.BASE_URL}stackup-logo.webp`}
+            alt="StackUp Hold'em"
+            className="h-full w-full object-cover"
+          />
         </div>
         <p className="text-[9px] uppercase tracking-[0.35em] text-red-300/55">
           Poker Training System
