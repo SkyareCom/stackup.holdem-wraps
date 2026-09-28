@@ -126,3 +126,19 @@ a {
   -webkit-text-stroke: 0 !important;
 }
 
+
+
+.bebrush-word {
+  display: inline-block;
+  margin: 8px 0 12px;
+  font-family: "BEBRUSH", "Brush Script MT", cursive !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 32px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em;
+  color: #ff4148;
+  transform: rotate(-10deg);
+  transform-origin: center;
+  -webkit-text-stroke: 0 !important;
+}
