@@ -5,6 +5,7 @@
   font-family: "Coming Soon", cursive;
   font-style: italic;
   font-weight: 700;
+  font-size: 14px;
   color: #ffffff;
   background: #050102;
   font-synthesis: weight style;
@@ -16,6 +17,18 @@
   font-family: "Coming Soon", cursive !important;
   font-style: italic !important;
   font-weight: 700 !important;
+  font-size: 14px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.ui-title {
+  font-size: 16px !important;
+  line-height: 1.25 !important;
 }
 
 html {
@@ -30,16 +43,17 @@ body {
   min-height: 100vh;
   background: #050102;
   overscroll-behavior-y: none;
+  font-size: 14px !important;
 }
 
 button,
 input,
 textarea,
 select {
-  font: inherit;
   font-family: "Coming Soon", cursive !important;
   font-style: italic !important;
   font-weight: 700 !important;
+  font-size: 14px !important;
 }
 
 button,
