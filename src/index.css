@@ -71,3 +71,29 @@ a {
   opacity: .22;
   mix-blend-mode: screen;
 }
+
+.page-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  transition: transform 260ms cubic-bezier(.22,.61,.36,1);
+  touch-action: pan-y;
+}
+
+.page-track.is-dragging {
+  transition: none;
+}
+
+.page-panel {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.page-panel::-webkit-scrollbar {
+  display: none;
+}
