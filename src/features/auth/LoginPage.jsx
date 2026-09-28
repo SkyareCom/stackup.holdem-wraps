@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BRAND_LOGO } from "../../assets/brandLogo";
 import {
   ChevronDown,
   Fingerprint,
@@ -79,16 +80,16 @@ export function LoginPage({ onEnter }) {
 
         <div className="relative z-10">
           <header className="pt-1 text-center">
-            <div className="relative mx-auto flex h-48 w-48 items-center justify-center">
+            <div className="relative mx-auto flex h-[320px] w-full items-center justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-2`}
+                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-3`}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute h-48 w-48 -rotate-[30deg] object-contain opacity-90"
+                className="pointer-events-none absolute w-[80vw] max-w-[344px] -rotate-[30deg] object-contain opacity-90"
               />
               <div className="relative z-10 h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
                 <img
-                  src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
+                  src={BRAND_LOGO}
                   alt="StackUp Hold'em"
                   className="h-full w-full object-cover"
                 />
