@@ -81,7 +81,7 @@ export function LoginPage({ onEnter }) {
           <header className="pt-1 text-center">
             <div className="relative mx-auto flex h-48 w-48 items-center justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-1`}
+                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-2`}
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none absolute h-48 w-48 -rotate-[30deg] object-contain opacity-90"
