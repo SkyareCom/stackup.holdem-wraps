@@ -1,44 +1,53 @@
 import React, { useState } from "react";
 import { BRAND_LOGO } from "../../assets/brandLogo";
 import {
-  ChevronDown,
+  ChevronRight,
   Fingerprint,
   Globe2,
-  KeyRound,
   MessageCircle,
   ShieldCheck,
+  Spade,
   UserRound,
 } from "lucide-react";
 
 const CARD_CLASS =
-  "w-full overflow-hidden rounded-[22px] border border-amber-300/55 bg-gradient-to-br from-[#301015]/90 via-[#160609]/95 to-[#070304] text-left shadow-[0_16px_40px_rgba(0,0,0,0.28),0_0_18px_rgba(232,198,117,0.06)]";
+  "w-full overflow-hidden rounded-[22px] border border-red-500/45 bg-gradient-to-br from-[#25080b]/92 via-[#120405]/96 to-[#050202]/98 text-left shadow-[0_14px_34px_rgba(0,0,0,0.48),inset_0_0_24px_rgba(255,45,55,0.035),0_0_18px_rgba(255,35,45,0.12)] backdrop-blur-md";
 
-function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children }) {
+function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children, accent = false }) {
   return (
     <section className={CARD_CLASS}>
       <button
         type="button"
         onClick={() => onToggle(id)}
-        className="flex w-full items-center gap-3 p-4 text-left"
+        className="flex w-full items-center gap-3.5 px-4 py-4 text-left"
         aria-expanded={open}
       >
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] border border-amber-300/20 bg-black/30 text-amber-300">
-          <Icon size={22} />
+        <div
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-[15px] border bg-black/25 ${
+            accent
+              ? "border-red-500/35 text-[#ff4148] shadow-[0_0_20px_rgba(255,45,55,0.14)]"
+              : "border-white/10 text-white/90"
+          }`}
+        >
+          <Icon size={24} strokeWidth={1.8} />
         </div>
 
-        <div className="min-w-0 flex-1 text-left">
-          <h2 className="ui-title text-white">{title}</h2>
-          <p className="mt-1 text-white/45">{subtitle}</p>
+        <div className="min-w-0 flex-1">
+          <h2 className="ui-title tracking-[0.01em] text-white">{title}</h2>
+          <p className="mt-1 leading-[1.35] text-white/52">{subtitle}</p>
         </div>
 
-        <ChevronDown
-          size={20}
-          className={`shrink-0 text-white/35 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        <ChevronRight
+          size={21}
+          strokeWidth={1.8}
+          className={`shrink-0 text-white/72 transition-transform duration-200 ${
+            open ? "rotate-90" : ""
+          }`}
         />
       </button>
 
       {open && (
-        <div className="border-t border-amber-300/15 px-4 pb-4 pt-4 text-left">
+        <div className="border-t border-red-500/15 px-4 pb-4 pt-4 text-left">
           {children}
         </div>
       )}
@@ -53,14 +62,20 @@ function ChoiceButton({ active, children, onClick }) {
       onClick={onClick}
       className={`w-full rounded-2xl border px-4 py-3 text-left transition active:scale-[0.99] ${
         active
-          ? "border-amber-300/45 bg-amber-300/10 text-amber-100"
-          : "border-white/10 bg-white/[0.03] text-white/70"
+          ? "border-red-400/55 bg-red-500/12 text-red-100 shadow-[0_0_16px_rgba(255,45,55,0.08)]"
+          : "border-white/10 bg-black/28 text-white/72"
       }`}
     >
       {children}
     </button>
   );
 }
+
+const ACTION_CLASS =
+  "w-full rounded-2xl border border-red-500/45 bg-gradient-to-r from-[#6d0b12] via-[#d71924] to-[#79080f] px-4 py-3 text-white shadow-[0_10px_28px_rgba(160,0,12,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] transition active:scale-[0.99] disabled:opacity-35";
+
+const FIELD_CLASS =
+  "w-full rounded-2xl border border-red-500/20 bg-black/35 px-4 py-3 text-white outline-none transition placeholder:text-white/25 focus:border-red-400/45 focus:shadow-[0_0_0_3px_rgba(255,45,55,0.06)]";
 
 export function LoginPage({ onEnter }) {
   const [openCard, setOpenCard] = useState(null);
@@ -74,19 +89,21 @@ export function LoginPage({ onEnter }) {
   const toggle = (id) => setOpenCard((current) => (current === id ? null : id));
 
   return (
-    <main className="min-h-screen bg-[#050102] text-white">
-      <div className="relative mx-auto min-h-screen w-full max-w-[430px] overflow-hidden bg-gradient-to-b from-[#4a0e17] via-[#21050a] to-[#050102] px-4 pb-8 pt-8 shadow-[0_0_80px_rgba(0,0,0,0.7)]">
-        <div className="soft-noise pointer-events-none absolute inset-0" />
+    <main className="min-h-screen bg-black text-white">
+      <div className="login-mockup-shell relative mx-auto min-h-screen w-full max-w-[430px] overflow-hidden px-4 pb-9 pt-7 shadow-[0_0_90px_rgba(0,0,0,0.82)]">
+        <div className="login-red-glow pointer-events-none absolute inset-x-0 top-0 h-[54%]" />
+        <div className="soft-noise pointer-events-none absolute inset-0 opacity-40" />
+
         <img
-          src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-4`}
+          src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-5`}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none fixed left-1/2 top-1/2 z-0 w-[80vw] max-w-[344px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg] object-contain opacity-30 select-none"
+          className="pointer-events-none fixed left-1/2 top-[39%] z-0 w-[80vw] max-w-[344px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg] object-contain opacity-30 select-none"
         />
 
         <div className="relative z-10">
           <header className="pt-1 text-center">
-            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
+            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_34px_rgba(255,55,65,0.24)]">
               <img
                 src={BRAND_LOGO}
                 alt="StackUp Hold'em"
@@ -95,14 +112,14 @@ export function LoginPage({ onEnter }) {
             </div>
 
             <div className="bebrush-word" aria-label="WRAPS">WRAPS</div>
-            <p className="text-white/70">PLO COM CONFIANÇA.</p>
+            <p className="tracking-[0.08em] text-white/72">PLO COM CONFIANÇA.</p>
           </header>
 
-          <div className="mt-8 space-y-3">
+          <div className="mt-7 space-y-3">
             <LoginCard
               id="language"
               title="IDIOMA"
-              subtitle="Escolha o idioma de preferência"
+              subtitle="Escolha o idioma do aplicativo"
               icon={Globe2}
               open={openCard === "language"}
               onToggle={toggle}
@@ -120,8 +137,8 @@ export function LoginPage({ onEnter }) {
             <LoginCard
               id="quick"
               title="ACESSO RÁPIDO"
-              subtitle="Entrar com biometria ou face ID"
-              icon={Fingerprint}
+              subtitle="Entre usando um acesso simplificado"
+              icon={UserRound}
               open={openCard === "quick"}
               onToggle={toggle}
             >
@@ -129,16 +146,16 @@ export function LoginPage({ onEnter }) {
                 <button
                   type="button"
                   onClick={() => onEnter("biometric")}
-                  className="flex w-full items-center gap-3 rounded-2xl border border-amber-300/20 bg-amber-300/10 px-4 py-3 text-amber-100 active:scale-[0.99]"
+                  className="flex w-full items-center gap-3 rounded-2xl border border-red-500/28 bg-red-500/8 px-4 py-3 text-white active:scale-[0.99]"
                 >
                   <Fingerprint size={20} />
-                  BIOMETRIA
+                  BIOMETRIA / FACE ID
                 </button>
 
                 <button
                   type="button"
                   onClick={() => onEnter("google")}
-                  className="flex w-full items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-white/75 active:scale-[0.99]"
+                  className="flex w-full items-center gap-3 rounded-2xl border border-white/10 bg-black/28 px-4 py-3 text-white/78 active:scale-[0.99]"
                 >
                   <UserRound size={20} />
                   ENTRAR COM GOOGLE
@@ -148,17 +165,17 @@ export function LoginPage({ onEnter }) {
 
             <LoginCard
               id="whatsapp"
-              title="VIA WHATSAPP"
-              subtitle="Entrar com código de validação"
+              title="LOGIN COM WHATSAPP"
+              subtitle="Receba um código de acesso no celular"
               icon={MessageCircle}
               open={openCard === "whatsapp"}
               onToggle={toggle}
             >
               <div className="space-y-3">
                 <label className="block">
-                  <span className="mb-2 block text-white/55">NÚMERO DO WHATSAPP</span>
-                  <div className="flex overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                    <span className="flex items-center border-r border-white/10 px-4 text-white/55">+55</span>
+                  <span className="mb-2 block text-white/58">NÚMERO DO WHATSAPP</span>
+                  <div className="flex overflow-hidden rounded-2xl border border-red-500/20 bg-black/35">
+                    <span className="flex items-center border-r border-red-500/15 px-4 text-white/58">+55</span>
                     <input
                       value={phone}
                       onChange={(event) => setPhone(event.target.value)}
@@ -174,14 +191,14 @@ export function LoginPage({ onEnter }) {
                     type="button"
                     disabled={!phone.trim()}
                     onClick={() => setCodeSent(true)}
-                    className="w-full rounded-2xl bg-gradient-to-r from-[#d89a31] via-[#f3c866] to-[#bd7d1e] px-4 py-3 text-black disabled:opacity-35"
+                    className={ACTION_CLASS}
                   >
                     ENVIAR CÓDIGO
                   </button>
                 ) : (
                   <>
                     <label className="block">
-                      <span className="mb-2 block text-white/55">CÓDIGO DE 4 DÍGITOS</span>
+                      <span className="mb-2 block text-white/58">CÓDIGO DE 4 DÍGITOS</span>
                       <input
                         value={code}
                         onChange={(event) =>
@@ -189,7 +206,7 @@ export function LoginPage({ onEnter }) {
                         }
                         inputMode="numeric"
                         placeholder="0000"
-                        className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none placeholder:text-white/25"
+                        className={FIELD_CLASS}
                       />
                     </label>
 
@@ -197,7 +214,7 @@ export function LoginPage({ onEnter }) {
                       type="button"
                       disabled={code.length !== 4}
                       onClick={() => onEnter("whatsapp")}
-                      className="w-full rounded-2xl bg-gradient-to-r from-[#d89a31] via-[#f3c866] to-[#bd7d1e] px-4 py-3 text-black disabled:opacity-35"
+                      className={ACTION_CLASS}
                     >
                       CONFIRMAR LOGIN
                     </button>
@@ -209,8 +226,9 @@ export function LoginPage({ onEnter }) {
             <LoginCard
               id="stackup-id"
               title="STACKUP HOLD'EM ID"
-              subtitle="Entrar com a sua conta"
-              icon={KeyRound}
+              subtitle="Use sua identidade central StackUp"
+              icon={Spade}
+              accent
               open={openCard === "stackup-id"}
               onToggle={toggle}
             >
@@ -220,7 +238,7 @@ export function LoginPage({ onEnter }) {
                   onChange={(event) => setStackupId(event.target.value)}
                   placeholder="STACKUP ID OU E-MAIL"
                   autoComplete="username"
-                  className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none placeholder:text-white/25"
+                  className={FIELD_CLASS}
                 />
 
                 <input
@@ -229,14 +247,14 @@ export function LoginPage({ onEnter }) {
                   placeholder="SENHA"
                   type="password"
                   autoComplete="current-password"
-                  className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none placeholder:text-white/25"
+                  className={FIELD_CLASS}
                 />
 
                 <button
                   type="button"
                   disabled={!stackupId.trim() || !password.trim()}
                   onClick={() => onEnter("stackup-id")}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#d89a31] via-[#f3c866] to-[#bd7d1e] px-4 py-3 text-black disabled:opacity-35"
+                  className={`${ACTION_CLASS} flex items-center justify-center gap-2`}
                 >
                   <ShieldCheck size={20} />
                   ENTRAR COM STACKUP ID
