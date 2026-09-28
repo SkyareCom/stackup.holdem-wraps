@@ -142,3 +142,27 @@ a {
   transform-origin: center;
   -webkit-text-stroke: 0 !important;
 }
+
+
+.login-mockup-shell {
+  background:
+    radial-gradient(circle at 50% 9%, rgba(176, 12, 24, 0.34), transparent 34%),
+    linear-gradient(180deg, #190205 0%, #0e0203 42%, #050101 100%);
+}
+
+.login-red-glow {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 28, 42, 0.22), transparent 30%),
+    radial-gradient(circle at 86% 24%, rgba(155, 0, 18, 0.18), transparent 34%);
+  filter: blur(3px);
+}
+
+.login-mockup-shell .bebrush-word {
+  margin: 8px 0 10px;
+  font-size: 40px !important;
+  letter-spacing: 0.015em;
+  color: #ff3039;
+  text-shadow:
+    0 0 10px rgba(255, 48, 57, 0.16),
+    0 3px 14px rgba(0, 0, 0, 0.45);
+}
