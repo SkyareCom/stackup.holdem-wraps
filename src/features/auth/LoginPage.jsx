@@ -78,20 +78,28 @@ export function LoginPage({ onEnter }) {
         <div className="soft-noise pointer-events-none absolute inset-0" />
 
         <div className="relative z-10">
-          <header className="text-center">
-            <div className="mx-auto h-24 w-24 overflow-hidden rounded-full shadow-[0_0_38px_rgba(245,158,11,0.16)]">
+          <header className="pt-1 text-center">
+            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
               <img
-                src={`${import.meta.env.BASE_URL}stackup-logo.webp`}
+                src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp`}
                 alt="StackUp Hold'em"
                 className="h-full w-full object-cover"
               />
             </div>
 
-            <h1 className="ui-title gold-text mt-4 tracking-[0.12em]">
+            <h1 className="brand-protest mt-4 text-[#ff4148]">
               STACKUP HOLD&apos;EM
             </h1>
-            <p className="mt-2 text-white/55">OMAHA POKER PRO</p>
-            <p className="mt-1 text-amber-200/65">DECIDA COM CONSISTÊNCIA</p>
+
+            <div className="wraps-word" aria-label="WRAPS">
+              <span className="wraps-letter">W</span>
+              <span className="wraps-letter">R</span>
+              <span className="wraps-letter">A</span>
+              <span className="wraps-letter">P</span>
+              <span className="wraps-letter">S</span>
+            </div>
+
+            <p className="text-white/70">PLO COM CONFIANÇA.</p>
           </header>
 
           <div className="mt-8 space-y-3">
