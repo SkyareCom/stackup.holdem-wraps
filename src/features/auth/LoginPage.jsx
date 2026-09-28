@@ -6,7 +6,6 @@ import {
   KeyRound,
   MessageCircle,
   ShieldCheck,
-  Spade,
   UserRound,
 } from "lucide-react";
 
@@ -80,8 +79,12 @@ export function LoginPage({ onEnter }) {
 
         <div className="relative z-10">
           <header className="text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[18px] border border-amber-300/25 bg-gradient-to-b from-amber-300/15 to-amber-800/5 shadow-[0_0_35px_rgba(245,158,11,0.12)]">
-              <Spade size={28} className="fill-amber-400 text-amber-400" />
+            <div className="mx-auto h-24 w-24 overflow-hidden rounded-full shadow-[0_0_38px_rgba(245,158,11,0.16)]">
+              <img
+                src={`${import.meta.env.BASE_URL}stackup-logo.webp`}
+                alt="StackUp Hold'em"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             <h1 className="ui-title gold-text mt-4 tracking-[0.12em]">
