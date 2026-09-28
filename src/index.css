@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Protest+Riot&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -114,3 +114,41 @@ a {
 .page-panel::-webkit-scrollbar {
   display: none;
 }
+
+
+.brand-protest {
+  font-family: "Protest Riot", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.06em;
+  -webkit-text-stroke: 0 !important;
+}
+
+.wraps-word {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  transform: rotate(-30deg);
+  transform-origin: center;
+  margin: 10px 0 14px;
+  color: #ff4148;
+}
+
+.wraps-letter {
+  display: inline-block;
+  font-family: "Protest Riot", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.wraps-letter:nth-child(1) { transform: translateY(2px) rotate(-2deg); }
+.wraps-letter:nth-child(2) { transform: translateY(-3px) rotate(2deg); }
+.wraps-letter:nth-child(3) { transform: translateY(1px) rotate(-1deg); }
+.wraps-letter:nth-child(4) { transform: translateY(-4px) rotate(3deg); }
+.wraps-letter:nth-child(5) { transform: translateY(3px) rotate(-2deg); }
