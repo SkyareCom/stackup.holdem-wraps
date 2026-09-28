@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 const CARD_CLASS =
-  "w-full overflow-hidden rounded-[22px] border border-red-800/30 bg-gradient-to-br from-[#301015]/90 via-[#160609]/95 to-[#070304] text-left shadow-[0_16px_40px_rgba(0,0,0,0.28)]";
+  "w-full overflow-hidden rounded-[22px] border border-amber-300/55 bg-gradient-to-br from-[#301015]/90 via-[#160609]/95 to-[#070304] text-left shadow-[0_16px_40px_rgba(0,0,0,0.28),0_0_18px_rgba(232,198,117,0.06)]";
 
 function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children }) {
   return (
@@ -19,14 +19,14 @@ function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children }
       <button
         type="button"
         onClick={() => onToggle(id)}
-        className="flex w-full items-center gap-3 p-4"
+        className="flex w-full items-center gap-3 p-4 text-left"
         aria-expanded={open}
       >
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] border border-amber-300/20 bg-black/30 text-amber-300">
           <Icon size={22} />
         </div>
 
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 text-left">
           <h2 className="ui-title text-white">{title}</h2>
           <p className="mt-1 text-white/45">{subtitle}</p>
         </div>
@@ -38,7 +38,7 @@ function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children }
       </button>
 
       {open && (
-        <div className="border-t border-white/[0.06] px-4 pb-4 pt-4">
+        <div className="border-t border-amber-300/15 px-4 pb-4 pt-4 text-left">
           {children}
         </div>
       )}
@@ -95,7 +95,7 @@ export function LoginPage({ onEnter }) {
             <LoginCard
               id="language"
               title="IDIOMA"
-              subtitle="Escolha o idioma do aplicativo"
+              subtitle="Escolha o idioma de preferência"
               icon={Globe2}
               open={openCard === "language"}
               onToggle={toggle}
@@ -113,7 +113,7 @@ export function LoginPage({ onEnter }) {
             <LoginCard
               id="quick"
               title="ACESSO RÁPIDO"
-              subtitle="Entre usando um acesso simplificado"
+              subtitle="Entrar com biometria ou face ID"
               icon={Fingerprint}
               open={openCard === "quick"}
               onToggle={toggle}
@@ -141,8 +141,8 @@ export function LoginPage({ onEnter }) {
 
             <LoginCard
               id="whatsapp"
-              title="LOGIN COM WHATSAPP"
-              subtitle="Receba um código de acesso no celular"
+              title="VIA WHATSAPP"
+              subtitle="Entrar com código de validação"
               icon={MessageCircle}
               open={openCard === "whatsapp"}
               onToggle={toggle}
@@ -202,7 +202,7 @@ export function LoginPage({ onEnter }) {
             <LoginCard
               id="stackup-id"
               title="STACKUP HOLD'EM ID"
-              subtitle="Use sua identidade central StackUp"
+              subtitle="Entrar com a sua conta"
               icon={KeyRound}
               open={openCard === "stackup-id"}
               onToggle={toggle}
