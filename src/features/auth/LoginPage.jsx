@@ -79,12 +79,20 @@ export function LoginPage({ onEnter }) {
 
         <div className="relative z-10">
           <header className="pt-1 text-center">
-            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
+            <div className="relative mx-auto flex h-48 w-48 items-center justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
-                alt="StackUp Hold'em"
-                className="h-full w-full object-cover"
+                src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-1`}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute h-48 w-48 -rotate-[30deg] object-contain opacity-90"
               />
+              <div className="relative z-10 h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
+                <img
+                  src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
+                  alt="StackUp Hold'em"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="wraps-word" aria-label="WRAPS">
