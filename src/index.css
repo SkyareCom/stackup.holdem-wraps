@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Protest+Riot&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Margarine&family=Protest+Riot&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -131,7 +131,7 @@ a {
 .bebrush-word {
   display: inline-block;
   margin: 8px 0 12px;
-  font-family: "BEBRUSH", "Brush Script MT", cursive !important;
+  font-family: "Margarine", cursive !important;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 32px !important;
