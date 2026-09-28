@@ -5,13 +5,26 @@ import {
   Fingerprint,
   Globe2,
   MessageCircle,
+  Phone,
   ShieldCheck,
   Spade,
   UserRound,
 } from "lucide-react";
 
-const CARD_CLASS =
-  "w-full overflow-hidden rounded-[22px] border border-red-500/45 bg-gradient-to-br from-[#25080b]/92 via-[#120405]/96 to-[#050202]/98 text-left shadow-[0_14px_34px_rgba(0,0,0,0.48),inset_0_0_24px_rgba(255,45,55,0.035),0_0_18px_rgba(255,35,45,0.12)] backdrop-blur-md";
+const CARD_CLASS = "login-card";
+
+function WhatsAppGlyph({ size = 24 }) {
+  return (
+    <span className="relative inline-flex items-center justify-center">
+      <MessageCircle size={size} strokeWidth={1.8} />
+      <Phone
+        size={Math.round(size * 0.46)}
+        strokeWidth={1.9}
+        className="absolute"
+      />
+    </span>
+  );
+}
 
 function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children, accent = false }) {
   return (
@@ -19,35 +32,35 @@ function LoginCard({ id, title, subtitle, icon: Icon, open, onToggle, children, 
       <button
         type="button"
         onClick={() => onToggle(id)}
-        className="flex w-full items-center gap-3.5 px-4 py-4 text-left"
+        className="login-card-trigger"
         aria-expanded={open}
       >
-        <div
-          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-[15px] border bg-black/25 ${
-            accent
-              ? "border-red-500/35 text-[#ff4148] shadow-[0_0_20px_rgba(255,45,55,0.14)]"
-              : "border-white/10 text-white/90"
-          }`}
-        >
-          <Icon size={24} strokeWidth={1.8} />
+        <div className={`login-card-icon ${accent ? "is-accent" : ""}`}>
+          {id === "whatsapp" ? (
+            <WhatsAppGlyph size={25} />
+          ) : (
+            <Icon
+              size={24}
+              strokeWidth={1.75}
+              fill={accent ? "currentColor" : "none"}
+            />
+          )}
         </div>
 
         <div className="min-w-0 flex-1">
-          <h2 className="ui-title tracking-[0.01em] text-white">{title}</h2>
-          <p className="mt-1 leading-[1.35] text-white/52">{subtitle}</p>
+          <h2 className="login-card-title">{title}</h2>
+          <p className="login-card-subtitle">{subtitle}</p>
         </div>
 
         <ChevronRight
           size={21}
           strokeWidth={1.8}
-          className={`shrink-0 text-white/72 transition-transform duration-200 ${
-            open ? "rotate-90" : ""
-          }`}
+          className={`login-card-chevron ${open ? "rotate-90" : ""}`}
         />
       </button>
 
       {open && (
-        <div className="border-t border-red-500/15 px-4 pb-4 pt-4 text-left">
+        <div className="login-card-drawer">
           {children}
         </div>
       )}
@@ -90,7 +103,7 @@ export function LoginPage({ onEnter }) {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <div className="login-mockup-shell relative mx-auto min-h-screen w-full max-w-[430px] overflow-hidden px-4 pb-9 pt-7 shadow-[0_0_90px_rgba(0,0,0,0.82)]">
+      <div className="login-mockup-shell relative mx-auto min-h-screen w-full max-w-[430px] overflow-hidden px-5 pb-8 pt-5 shadow-[0_0_90px_rgba(0,0,0,0.82)]">
         <div className="login-red-glow pointer-events-none absolute inset-x-0 top-0 h-[54%]" />
         <div className="soft-noise pointer-events-none absolute inset-0 opacity-40" />
 
@@ -98,12 +111,12 @@ export function LoginPage({ onEnter }) {
           src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-5`}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none fixed left-1/2 top-[39%] z-0 w-[80vw] max-w-[344px] -translate-x-1/2 -translate-y-1/2 -rotate-[30deg] object-contain opacity-30 select-none"
+          className="login-bg-aces"
         />
 
         <div className="relative z-10">
           <header className="pt-1 text-center">
-            <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_34px_rgba(255,55,65,0.24)]">
+            <div className="login-brand-logo">
               <img
                 src={BRAND_LOGO}
                 alt="StackUp Hold'em"
@@ -112,10 +125,10 @@ export function LoginPage({ onEnter }) {
             </div>
 
             <div className="bebrush-word" aria-label="WRAPS">WRAPS</div>
-            <p className="tracking-[0.08em] text-white/72">PLO COM CONFIANÇA.</p>
+            <p className="login-brand-slogan">PLO COM CONFIANÇA.</p>
           </header>
 
-          <div className="mt-7 space-y-3">
+          <div className="login-card-stack">
             <LoginCard
               id="language"
               title="IDIOMA"
