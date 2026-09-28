@@ -81,7 +81,7 @@ export function LoginPage({ onEnter }) {
           <header className="pt-1 text-center">
             <div className="mx-auto h-36 w-36 overflow-hidden rounded-full shadow-[0_0_42px_rgba(255,65,72,0.18)]">
               <img
-                src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp`}
+                src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
                 alt="StackUp Hold'em"
                 className="h-full w-full object-cover"
               />
