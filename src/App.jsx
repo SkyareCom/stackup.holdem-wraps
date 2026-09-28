@@ -1,5 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { HomeScreen } from "./features/home/HomeScreen";
+import { BottomNavigation } from "./components/BottomNavigation";
+import { HomePage } from "./features/home/HomePage";
+import { TrainingPage } from "./features/training/TrainingPage";
+import { StatsPage } from "./features/stats/StatsPage";
+import { ProfilePage } from "./features/profile/ProfilePage";
+import { StorePage } from "./features/store/StorePage";
 import { TrainingSheet } from "./features/training/TrainingSheet";
 import { TRAINING_MODULES } from "./data/trainingModules";
 import { readSession } from "./services/session";
@@ -9,7 +14,7 @@ import { analytics } from "./services/analytics";
 function Notice({ text }) {
   if (!text) return null;
   return (
-    <div className="fixed left-1/2 top-4 z-[60] w-[calc(100%-32px)] max-w-[398px] -translate-x-1/2 rounded-2xl border border-amber-400/20 bg-[#160a04]/95 px-4 py-3 text-center text-[11px] font-bold text-amber-100 shadow-2xl backdrop-blur-xl">
+    <div className="fixed left-1/2 top-4 z-[60] w-[calc(100%-32px)] max-w-[398px] -translate-x-1/2 rounded-2xl border border-amber-400/20 bg-[#160a04]/95 px-4 py-3 text-center text-[11px] text-amber-100 shadow-2xl backdrop-blur-xl">
       {text}
     </div>
   );
@@ -75,31 +80,48 @@ export default function App() {
 
   const handleNavigation = (destination) => {
     setActiveNav(destination);
+    setSelectedModule(null);
     analytics.navigationSelected({
       destination,
       plan: session.plan,
     });
+  };
 
-    if (destination !== "home") {
-      showNotice(`${destination.toUpperCase()}: módulo preparado para a próxima etapa.`);
+  const renderPage = () => {
+    switch (activeNav) {
+      case "treinos":
+        return <TrainingPage />;
+      case "stats":
+        return <StatsPage />;
+      case "perfil":
+        return <ProfilePage />;
+      case "loja":
+        return <StorePage />;
+      case "home":
+      default:
+        return (
+          <HomePage
+            modules={TRAINING_MODULES}
+            session={session}
+            onOpenModule={handleModuleOpen}
+            onQuickStart={handleQuickStart}
+          />
+        );
     }
   };
 
   return (
     <div className="min-h-screen bg-[#050102] text-white">
-      <HomeScreen
-        modules={TRAINING_MODULES}
-        session={session}
-        activeNav={activeNav}
-        onOpenModule={handleModuleOpen}
-        onQuickStart={handleQuickStart}
-        onNavigation={handleNavigation}
-      />
+      {renderPage()}
+
+      <BottomNavigation active={activeNav} onChange={handleNavigation} />
+
       <TrainingSheet
         module={selectedModule}
         onClose={() => setSelectedModule(null)}
         onStart={handleTrainingStart}
       />
+
       <Notice text={notice} />
     </div>
   );
