@@ -130,10 +130,10 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 2px;
   transform: rotate(-30deg);
   transform-origin: center;
-  margin: 10px 0 14px;
+  margin: 16px 0 20px;
   color: #ff4148;
 }
 
@@ -142,13 +142,13 @@ a {
   font-family: "Protest Riot", sans-serif !important;
   font-style: normal !important;
   font-weight: 400 !important;
-  font-size: 16px !important;
+  font-size: 32px !important;
   line-height: 1 !important;
   -webkit-text-stroke: 0 !important;
 }
 
-.wraps-letter:nth-child(1) { transform: translateY(2px) rotate(-2deg); }
-.wraps-letter:nth-child(2) { transform: translateY(-3px) rotate(2deg); }
-.wraps-letter:nth-child(3) { transform: translateY(1px) rotate(-1deg); }
-.wraps-letter:nth-child(4) { transform: translateY(-4px) rotate(3deg); }
-.wraps-letter:nth-child(5) { transform: translateY(3px) rotate(-2deg); }
+.wraps-letter:nth-child(1) { transform: translateY(4px) rotate(-2deg); }
+.wraps-letter:nth-child(2) { transform: translateY(-6px) rotate(2deg); }
+.wraps-letter:nth-child(3) { transform: translateY(2px) rotate(-1deg); }
+.wraps-letter:nth-child(4) { transform: translateY(-8px) rotate(3deg); }
+.wraps-letter:nth-child(5) { transform: translateY(6px) rotate(-2deg); }
