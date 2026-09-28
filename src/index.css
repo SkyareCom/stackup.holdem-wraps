@@ -219,19 +219,54 @@ a {
 }
 
 .login-card {
+  position: relative;
+  isolation: isolate;
   width: 100%;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid rgba(255, 61, 72, .56);
+  border: 1px solid rgba(255, 78, 88, .72);
   background:
-    linear-gradient(135deg, rgba(45, 7, 11, .96), rgba(12, 2, 3, .98) 68%, rgba(3, 1, 1, .99));
+    linear-gradient(180deg, rgba(132, 8, 18, .72) 0%, rgba(74, 5, 11, .78) 50%, rgba(22, 2, 5, .92) 100%);
   text-align: left;
   box-shadow:
-    0 13px 28px rgba(0,0,0,.44),
-    inset 0 1px 0 rgba(255,255,255,.025),
-    inset 0 0 24px rgba(255,45,55,.028),
-    0 0 14px rgba(255,35,45,.10);
-  backdrop-filter: blur(7px);
+    0 14px 30px rgba(0,0,0,.46),
+    inset 0 1px 0 rgba(255,255,255,.075),
+    inset 0 0 24px rgba(255,35,45,.12),
+    0 0 20px rgba(255,35,45,.20);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 62, 72, .52) 0%, rgba(255, 40, 52, .24) 18%, transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(255, 48, 60, .42) 0%, rgba(255, 35, 48, .18) 17%, transparent 37%),
+    linear-gradient(180deg, rgba(255,255,255,.035), transparent 42%);
+  mix-blend-mode: screen;
+}
+
+.login-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0% 100%, rgba(255, 42, 55, .40) 0%, rgba(255, 32, 44, .16) 17%, transparent 38%),
+    radial-gradient(circle at 100% 100%, rgba(255, 68, 78, .58) 0%, rgba(255, 40, 52, .26) 20%, transparent 43%);
+  mix-blend-mode: screen;
+}
+
+.login-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .login-card-trigger {
@@ -328,4 +363,51 @@ a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+}
+
+
+.red-glass-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 86, 96, .76);
+  background:
+    linear-gradient(180deg, rgba(176, 10, 24, .84) 0%, rgba(112, 6, 16, .88) 48%, rgba(47, 2, 7, .96) 100%);
+  color: #fff;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 0 22px rgba(255, 45, 58, .15),
+    0 0 22px rgba(255, 38, 52, .24);
+  backdrop-filter: blur(12px) saturate(145%);
+  -webkit-backdrop-filter: blur(12px) saturate(145%);
+}
+
+.red-glass-btn::before,
+.red-glass-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.red-glass-btn::before {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 82, 92, .58) 0%, rgba(255, 52, 65, .24) 22%, transparent 43%),
+    radial-gradient(circle at 100% 0%, rgba(255, 64, 76, .48) 0%, rgba(255, 42, 56, .20) 20%, transparent 40%);
+}
+
+.red-glass-btn::after {
+  background:
+    radial-gradient(circle at 0% 100%, rgba(255, 58, 70, .46) 0%, rgba(255, 38, 52, .18) 20%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(255, 86, 96, .64) 0%, rgba(255, 46, 60, .28) 23%, transparent 46%);
+}
+
+.red-glass-btn > * {
+  position: relative;
+  z-index: 1;
 }
