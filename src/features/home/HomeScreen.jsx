@@ -35,12 +35,20 @@ function Header({ session }) {
       </div>
 
       <div className="mt-4 flex flex-col items-center text-center">
-        <div className="mb-3 h-28 w-28 overflow-hidden rounded-full shadow-[0_0_38px_rgba(255,65,72,0.16)]">
+        <div className="relative mb-3 flex h-40 w-40 items-center justify-center">
           <img
-            src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
-            alt="StackUp Hold'em"
-            className="h-full w-full object-cover"
+            src={`${import.meta.env.BASE_URL}aces-behind-logo.webp?v=20260928-1`}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute h-40 w-40 -rotate-[30deg] object-contain opacity-90"
           />
+          <div className="relative z-10 h-28 w-28 overflow-hidden rounded-full shadow-[0_0_38px_rgba(255,65,72,0.16)]">
+            <img
+              src={`${import.meta.env.BASE_URL}stackup-wraps-logo.webp?v=20260928-2`}
+              alt="StackUp Hold'em"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="wraps-word" aria-label="WRAPS">
