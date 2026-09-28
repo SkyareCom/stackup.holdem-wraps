@@ -87,10 +87,6 @@ export function LoginPage({ onEnter }) {
               />
             </div>
 
-            <h1 className="brand-protest mt-4 text-[#ff4148]">
-              STACKUP HOLD&apos;EM
-            </h1>
-
             <div className="wraps-word" aria-label="WRAPS">
               <span className="wraps-letter">W</span>
               <span className="wraps-letter">R</span>
