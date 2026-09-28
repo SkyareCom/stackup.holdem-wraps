@@ -44,14 +44,6 @@ function Header({ session }) {
           />
         </div>
 
-        <div className="wraps-word" aria-label="WRAPS">
-          <span className="wraps-letter">W</span>
-          <span className="wraps-letter">R</span>
-          <span className="wraps-letter">A</span>
-          <span className="wraps-letter">P</span>
-          <span className="wraps-letter">S</span>
-        </div>
-
         <p className="text-white/70">PLO COM CONFIANÇA.</p>
       </div>
     </header>
